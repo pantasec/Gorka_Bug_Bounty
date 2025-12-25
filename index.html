@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #FF004D; /* Rojo intenso hacker / bug bounty */
-            --primary-light: rgba(255, 0, 77, 0.2);
-            --primary-dark: #cc003d;
+            --primary: #FF6600; /* Naranja intenso - temática bug bounty / hacker */
+            --primary-light: rgba(255, 102, 0, 0.2);
+            --primary-dark: #cc5200;
             --dark: #0a0a0a;
             --darker: #050505;
             --light: #f5f5f5;
@@ -121,7 +121,7 @@
         .link-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary);
-            box-shadow: 0 10px 25px rgba(255, 0, 77, 0.3);
+            box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
         }
         .link-icon {
             width: 55px;
@@ -131,11 +131,11 @@
             justify-content: center;
             margin-right: 1.8rem;
             border-radius: 12px;
-            background: rgba(255, 0, 77, 0.1);
+            background: rgba(255, 102, 0, 0.1);
             transition: var(--transition);
         }
         .link-card:hover .link-icon {
-            background: rgba(255, 0, 77, 0.2);
+            background: rgba(255, 102, 0, 0.2);
             transform: scale(1.1);
         }
         .link-icon i {
@@ -168,12 +168,12 @@
             text-decoration: none;
             display: inline-block;
             font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(255, 0, 77, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
             margin: 2rem 0;
         }
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 0, 77, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
         }
         .course-thumb {
             width: 100%;
@@ -185,39 +185,7 @@
         }
         .course-thumb:hover {
             transform: scale(1.02);
-            box-shadow: 0 12px 30px rgba(255, 0, 77, 0.3);
-        }
-        .tools-box {
-            background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(20, 20, 20, 0.8));
-            border: 1px solid var(--primary-light);
-            border-radius: 14px;
-            padding: 1.8rem;
-            margin: 1.5rem 0;
-            backdrop-filter: blur(12px);
-        }
-        .tool-button {
-            background: rgba(255, 0, 77, 0.1);
-            color: var(--light);
-            padding: 1.4rem;
-            border-radius: 10px;
-            text-decoration: none;
-            display: block;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 0, 77, 0.2);
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        .tool-button:hover {
-            background: rgba(255, 0, 77, 0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 0, 77, 0.25);
-        }
-        .tool-button i {
-            font-size: 2.5rem;
-            margin-bottom: 0.8rem;
-            display: block;
-            color: var(--primary);
+            box-shadow: 0 12px 30px rgba(255, 102, 0, 0.3);
         }
         footer {
             background: rgba(15, 15, 15, 0.9);
@@ -242,60 +210,6 @@
             opacity: 1;
             color: var(--primary);
         }
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            backdrop-filter: blur(8px);
-            padding: 1rem;
-        }
-        .modal-content {
-            background: linear-gradient(145deg, rgba(20, 20, 20, 0.98), rgba(15, 15, 15, 0.98));
-            border: 1px solid var(--primary);
-            border-radius: 16px;
-            max-width: 550px;
-            width: 100%;
-            padding: 2.5rem;
-            position: relative;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 28px;
-            cursor: pointer;
-            color: var(--light);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            transition: var(--transition);
-        }
-        .close-modal:hover {
-            color: var(--primary);
-            background: rgba(255, 0, 77, 0.2);
-            transform: rotate(90deg);
-        }
-        .modal-title {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 1.2rem;
-            text-shadow: 0 0 10px rgba(255, 0, 77, 0.3);
-        }
-        .modal-desc {
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -306,7 +220,6 @@
             .container { padding: 1.8rem; }
             .link-card { flex-direction: column; text-align: center; }
             .link-icon { margin-bottom: 1rem; margin-right: 0; }
-            .modal-content { padding: 2rem; }
         }
     </style>
 </head>
@@ -327,18 +240,10 @@
             </a>
         </div>
 
-        <!-- Botón clases particulares (mantengo el mismo enlace de agenda que antes) -->
+        <!-- Botón clases particulares -->
         <a href="https://cal.com/lionxsecurity-gmg0n1/30min" target="_blank" class="btn-primary">
             Clases Particulares (Inserción Laboral) <i class="fas fa-arrow-right"></i>
         </a>
-
-        <h3 class="section-title"><i class="fas fa-book-open"></i> Apuntes Gratis</h3>
-        <div class="tools-box">
-            <div class="tool-button" id="freeNotesButton">
-                <i class="fas fa-book"></i>
-                <span>Recibir Apuntes Exclusivos de Bug Bounty</span>
-            </div>
-        </div>
 
         <h3 class="section-title"><i class="fab fa-discord"></i> Comunidad Discord</h3>
         <div class="links">
@@ -346,7 +251,7 @@
                 <div class="link-icon"><i class="fab fa-discord"></i></div>
                 <div class="link-text">
                     <p class="link-title">Discord 0xGorka</p>
-                    <p class="link-desc">Apuntes gratis, recursos, dudas resueltas, live hunting y comunidad de bug bounty</p>
+                    <p class="link-desc">Recursos exclusivos, live hunting, resolución de dudas y comunidad activa de bug bounty</p>
                 </div>
             </a>
         </div>
@@ -377,23 +282,8 @@
         </div>
     </footer>
 
-    <!-- Modal Apuntes Gratis -->
-    <div class="modal-overlay" id="apuntesModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeApuntesModal">×</span>
-            <h3 class="modal-title"><i class="fas fa-book"></i> Apuntes Gratis de Bug Bounty</h3>
-            <p class="modal-desc">
-                Recibe apuntes exclusivos, metodologías, checklists y recursos avanzados de bug bounty directamente en tu email.
-            </p>
-            <div class="eo-form-container">
-                <!-- Usamos el mismo formulario de apuntes que en los anteriores (el de descuento 15% reutilizado para apuntes) -->
-                <script async src="https://eocampaign1.com/form/6678d19e-8b1f-11f0-808e-af63b4293a21.js" data-form="6678d19e-8b1f-11f0-808e-af63b4293a21"></script>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Matrix rain effect (rojo para bug bounty)
+        // Matrix rain effect en naranja
         const canvas = document.getElementById('matrix');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -406,7 +296,7 @@
         function draw() {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#FF004D';
+            ctx.fillStyle = '#FF6600';
             ctx.font = `${fontSize}px monospace`;
             for (let i = 0; i < drops.length; i++) {
                 const text = chars[Math.floor(Math.random() * chars.length)];
@@ -419,29 +309,6 @@
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-        });
-
-        // Modal logic
-        const freeNotesButton = document.getElementById('freeNotesButton');
-        const apuntesModal = document.getElementById('apuntesModal');
-        const closeApuntesModal = document.getElementById('closeApuntesModal');
-
-        freeNotesButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            apuntesModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeApuntesModal.addEventListener('click', () => {
-            apuntesModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-
-        apuntesModal.addEventListener('click', (e) => {
-            if (e.target === apuntesModal) {
-                apuntesModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
         });
     </script>
 </body>
